@@ -1,1 +1,65 @@
+bordo = #67150F
+czerwony = #9B3104
+zolty = #F7E685
+bialy = #FFFFFF
+col = (100vw / 12)
 
+*
+    margin 0
+    padding 0
+    border 0
+    box-sizing border-box
+    font-family 'Lato', sans-serif
+    font-weight 300
+    font-size 1rem
+    letter-spacing 0em
+    line-height 1.5em
+    color bialy
+    text-rendering optimizeLegibility
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+    font-smoothing antialiased
+    font-smooth antialiased
+
+h1, h2, h3, h4, h5, h6
+    font-family 'Playfair Display', serif
+    font-weight 800
+    font-size 3rem
+    letter-spacing 0em
+    line-height 1em
+    padding 0.25em 0 1em 0
+
+.layout-lines
+    display flex
+    width 100%
+    position fixed
+    top 0
+    z-index -100
+    .layout-line
+        flex 1
+        height 100vh
+        border-left 1px dotted bialy
+        opacity: 0.25
+
+body
+    background bordo
+section
+    padding 0 (col * 2)
+    .items
+        display: flex
+        filter sepia() hue-rotate(300deg) saturate(150%) 
+        transition 1s all
+        &:hover
+            filter none
+        &:nth-child(even)
+            flex-direction row-reverse
+
+        .obrazek
+            width (col * 3)
+            min-height: 50vh
+            align-items center
+            background no-repeat center center / contain
+        .tekst
+            width (col * 4)
+        .margines
+            width (col * 1)

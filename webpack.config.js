@@ -1,5 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
+var path = require('path')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 module.exports = {
   entry: './src/main.js',

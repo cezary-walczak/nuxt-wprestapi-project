@@ -1,15 +1,16 @@
 <template lang="pug">
-  section#powitanie
-    .items(v-for="item in powitanie")
+  section#muzykoterapia
+    .items(v-for="item in muzykoterapia")
       .obrazek(v-bind:style="{ backgroundImage: 'url(' + item.acf.obrazek.url + ')' }")
       .tekst
         .naglowek(v-html="item.acf.tekst")
+        .specjalizacja(v-html="item.acf.specjalizacja")
         .edytor(v-html="item.acf.edytor")
 </template>
 
 <script>
 export default {
-    props: ['powitanie']
+    props: ['muzykoterapia']
 }
 </script>
 
