@@ -1,10 +1,13 @@
 <template lang="pug">
   section#powitanie
     .items(v-for="item in powitanie")
-      .obrazek(v-bind:style="{ backgroundImage: 'url(' + item.acf.obrazek.url + ')' }")
-      .tekst
-        .naglowek(v-html="item.acf.tekst")
-        .edytor(v-html="item.acf.edytor")
+      .obrazek
+        .zdjecie(v-bind:style="{ backgroundImage: 'url(' + item.acf.zdjecie.url + ')' }")
+      .margines
+      .tekst 
+        .naglowek
+          h1(v-html="item.acf.naglowek")
+        .opis(v-html="item.acf.opis")
 </template>
 
 <script>
