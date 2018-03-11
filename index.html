@@ -8,5 +8,45 @@
   <body>
     <div id="app"></div>
     <script src="/dist/build.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>if (!window.jQuery) { document.write('<script src="js/jquery-3.1.1.slim.min.js"><\/script>') }</script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+
+    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      // smooth scroll
+      $(document).ready(function() {	
+        var scrollTime = 1;				
+        var scrollDistance = 200;		
+          
+        $(window).on("mousewheel DOMMouseScroll", function(event) {
+          event.preventDefault();	
+                          
+          var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3; 
+          var finalScroll = $(window).scrollTop() - parseInt(delta*scrollDistance);
+            
+          TweenMax.to( $(window), scrollTime, {
+            scrollTo : { y: finalScroll, autoKill:true },
+              ease: Power1.easeOut,	//For more easing functions see http://api.greensock.com/js/com/greensock/easing/package-detail.html
+              autoKill: true,
+              overwrite: 5							
+            });		
+        });
+      });
+      // parallax
+      $(document).ready(function() {
+        $(window).scroll(function() {
+          var scroll = $(window).scrollTop();
+          $(".parallax").css({
+            "transform": "translateY(" +  (scroll/10)  + "px)"
+          });
+        });
+      });
+    </script>
   </body>
 </html>

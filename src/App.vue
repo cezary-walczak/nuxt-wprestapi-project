@@ -1,25 +1,22 @@
 <template lang="pug">
   main
-    #nav-btn(v-on:click="switchNav") &#x2630; MENU
+    #nav-btn(v-on:click="toggleNav") &#x2630; MENU
     nav
-      .gabinet(v-show="activeNav" v-on:click="switchNav")
-        router-link(to="/powitanie" exact ) 
+
+      .gabinet(v-show="activeNav" v-on:click="toggleNav")
+        router-link(to="/powitanie" exact) 
           h1 powitanie
-        router-link(to="/specjalisci") 
+        router-link(to="/specjalisci" exact) 
           h1 specjaliści
-        router-link(to="/badania") 
+        router-link(to="/badania" exact) 
           h1 badania
-        router-link(to="/kontakt") 
+        router-link(to="/kontakt" exact) 
           h1 kontakt
-        router-link(to="/muzykoterapia") 
+        router-link(to="/muzykoterapia" exact) 
           h1 muzykoterapia
-        router-link(to="/podrozeodserca") 
+        router-link(to="/podrozeodserca" exact) 
           h1 podróże od serca
-      //- .osobista
-            router-link(to="/powitanie" exact) powitanie
-      //-   router-link(to="/podrozeodserca" exact) podróże od serca
-      //-   router-link(to="/byclekarzem" exact) być lekarzem
-      //-   router-link(to="/slowokardiologa" exact) słowo kardiologa
+        
     router-view(
       v-bind:powitanie="powitanie"
       v-bind:specjalisci="specjalisci"
@@ -55,7 +52,8 @@ export default {
       byclekarzem: '',
       slowokardiologa: '',
 
-      activeNav: false
+      activeNav: false,
+      switchNav: true
     }
   },
   methods: {
@@ -100,9 +98,9 @@ export default {
       .catch(error => { console.log(error) })
     },
 
-    switchNav() {
+    toggleNav() {
       this.activeNav = !this.activeNav
-    }
+    },
   },  
   created() {
     this.getPowitanie(),
@@ -125,27 +123,27 @@ export default {
       right 0
       padding 1vh 1vw
       margin 10vh 5vw
-      color zolty
-      border 1px solid zolty
+      border 1px solid bialy
       z-index 10
     nav
-      .gabinet
-        width 100%
+      width 100%
+      padding 0 (col * 2)
+      display flex
+      position fixed
+      z-index 100
+      background zolty
+      div
+        width 50%
         height 100vh
-        padding (col * 2)
-        position fixed
-        z-index 100
         display flex
         flex-flow column nowrap
-        justify-content space-around
-        align-content stretch
-        background zolty
-        transition 1s all
+        justify-content center
         a
           text-decoration none
           h1
             color bordo
             transition 1s all
+            padding 0.5em 0 0.5em 0
             &:hover
               text-indent 1vw
               color czerwony

@@ -1,6 +1,6 @@
 <template lang="pug">
-  section#kontakt
-    .items(v-for="item in kontakt")
+  section#powitanie
+    .items(v-for="item in powitanie")
       .obrazek
         .zdjecie(v-bind:style="{ backgroundImage: 'url(' + item.acf.zdjecie.url + ')' }")
       .margines
@@ -12,10 +12,16 @@
 
 <script>
 export default {
-    props: ['kontakt']
+    props: ['powitanie']
 }
 </script>
 
 <style lang="stylus">
-
+  @import '../*'
+  section#powitanie
+    .items:first-child
+      .obrazek
+        .zdjecie
+          width (col * 8)
+          max-height 20vh
 </style>
