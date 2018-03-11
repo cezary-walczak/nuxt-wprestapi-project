@@ -15,7 +15,7 @@ Vue.use(VueRouter)
 
 export const router = new VueRouter({
   routes: [
-    { path: '/', component: powitanie },
+    { path: '/wordpress', component: powitanie },
     { path: '/powitanie', component: powitanie },
     { path: '/specjalisci', component: Specjalisci },
     { path: '/badania', component: badania },

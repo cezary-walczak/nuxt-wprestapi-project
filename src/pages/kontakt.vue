@@ -19,16 +19,10 @@ export default {
     gmap
   },
   props: ['kontakt'],
-  methods: {
-    showContact() {
-      console.log(kontakt)
-    }
-  }
 }
 </script>
 
 <style lang="stylus">
-  @import '../*'
   section#kontakt
     .items
       .obrazek
@@ -39,8 +33,5 @@ export default {
         .opis
           strong 
             font-weight 900
-    #gmap 
-      height 80vh
-      margin -(col * 2)
-      margin-top (col)
+
 </style>

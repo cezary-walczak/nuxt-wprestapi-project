@@ -2,7 +2,6 @@
   main
     #nav-btn(v-on:click="toggleNav") &#x2630; MENU
     nav
-
       .gabinet(v-show="activeNav" v-on:click="toggleNav")
         router-link(to="/powitanie" exact) 
           h1 powitanie
@@ -16,17 +15,18 @@
           h1 muzykoterapia
         router-link(to="/podrozeodserca" exact) 
           h1 podróże od serca
-        
-    router-view(
-      v-bind:powitanie="powitanie"
-      v-bind:specjalisci="specjalisci"
-      v-bind:badania="badania"
-      v-bind:kontakt="kontakt"
-      v-bind:muzykoterapia="muzykoterapia"
-      v-bind:podrozeodserca="podrozeodserca"
-      v-bind:byclekarzem="byclekarzem"
-      v-bind:slowokardiologa="slowokardiologa"
-    )
+
+    transition(name="fade" mode="out-in")
+      router-view(
+        v-bind:powitanie="powitanie"
+        v-bind:specjalisci="specjalisci"
+        v-bind:badania="badania"
+        v-bind:kontakt="kontakt"
+        v-bind:muzykoterapia="muzykoterapia"
+        v-bind:podrozeodserca="podrozeodserca"
+        v-bind:byclekarzem="byclekarzem"
+        v-bind:slowokardiologa="slowokardiologa"
+      )
 
     .layout-lines
       .layout-line
@@ -125,6 +125,11 @@ export default {
       margin 10vh 5vw
       border 1px solid bialy
       z-index 10
+      transition 0.5s all
+      &:hover
+        color zolty
+        border 1px solid zolty
+        cursor pointer
     nav
       width 100%
       padding 0 (col * 2)
@@ -147,4 +152,17 @@ export default {
             &:hover
               text-indent 1vw
               color czerwony
+
+    .fade-enter-active
+      animation: fade-in 0.5s
+    
+    .fade-leave-active
+      animation: fade-in 0.5s reverse
+    
+    @keyframes fade-in
+      0%
+        opacity 0
+      100%
+        opacity 1
+        
 </style>
