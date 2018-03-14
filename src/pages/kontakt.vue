@@ -15,23 +15,16 @@
 import gmap from '../components/gmap.vue'
 
 export default {
-  components: {
-    gmap
-  },
-  props: ['kontakt'],
+    components: {
+      gmap
+    },
+    props: ['kontakt'],
+    mounted() {
+      window.scrollTo(0, 0)
+    }
 }
 </script>
 
-<style lang="stylus">
-  section#kontakt
-    .items
-      .obrazek
-      .margines
-      .tekst 
-        .naglowek
-          h1
-        .opis
-          strong 
-            font-weight 900
+<style lang="stylus" scoped>
 
 </style>

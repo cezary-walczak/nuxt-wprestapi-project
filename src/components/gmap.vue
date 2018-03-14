@@ -8,7 +8,7 @@ export default {
   methods: {
     getGmap() {
       const options = {
-        zoom: 16,
+        zoom: 15,
         center: { lat: 52.201906, lng: 20.982316 },
         styles: styles
       }
@@ -29,7 +29,8 @@ export default {
 <style lang="stylus" scoped>
   @import '../*'
   section#gmap 
-    height 80vh
+    height 100vh
     margin -(col * 2)
     margin-top (col)
+    background bordo
 </style>

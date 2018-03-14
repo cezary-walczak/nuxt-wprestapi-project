@@ -1,6 +1,6 @@
 <template lang="pug">
   main
-    #nav-btn(v-on:click="toggleNav") &#x2630; MENU
+    #nav-btn.parallax(v-on:click="toggleNav") &#x2630; MENU
     nav
       .gabinet(v-show="activeNav" v-on:click="toggleNav")
         router-link(to="/powitanie" exact) 
@@ -117,6 +117,8 @@ export default {
 
 <style lang="stylus">
   @import '*'
+  body
+    background bordo url('./assets/bgr.png') no-repeat top center / cover
   main
     #nav-btn
       position fixed
@@ -125,7 +127,7 @@ export default {
       margin 10vh 5vw
       border 1px solid bialy
       z-index 10
-      transition 0.5s all
+      transition 1s color border
       &:hover
         color zolty
         border 1px solid zolty
@@ -136,7 +138,7 @@ export default {
       display flex
       position fixed
       z-index 100
-      background zolty
+      background zolty url('./assets/serce.svg') no-repeat center center / contain
       div
         width 50%
         height 100vh
@@ -164,5 +166,5 @@ export default {
         opacity 0
       100%
         opacity 1
-        
+ 
 </style>

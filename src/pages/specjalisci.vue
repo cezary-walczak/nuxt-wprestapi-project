@@ -13,11 +13,14 @@
 
 <script>
 export default {
-    props: ['specjalisci']
+    props: ['specjalisci'],
+    mounted() {
+      window.scrollTo(0, 0)
+    }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   @import '../*'
   section#specjalisci
     .items

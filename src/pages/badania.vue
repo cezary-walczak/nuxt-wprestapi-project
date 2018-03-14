@@ -12,11 +12,14 @@
 
 <script>
 export default {
-    props: ['badania']
+    props: ['badania'],
+    mounted() {
+      window.scrollTo(0, 0)
+    }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 </style>
 

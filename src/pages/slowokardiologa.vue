@@ -12,10 +12,13 @@
 
 <script>
 export default {
-    props: ['slowokardiologa']
+    props: ['slowokardiologa'],
+    mounted() {
+      window.scrollTo(0, 0)
+    }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 </style>

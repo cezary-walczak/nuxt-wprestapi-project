@@ -19,10 +19,13 @@
 
 <script>
 export default {
-    props: ['podrozeodserca']
+    props: ['podrozeodserca'],
+    mounted() {
+      window.scrollTo(0, 0)
+    }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 </style>

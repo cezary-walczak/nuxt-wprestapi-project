@@ -12,11 +12,14 @@
 
 <script>
 export default {
-    props: ['powitanie']
+    props: ['powitanie'],
+    mounted() {
+      window.scrollTo(0, 0)
+    }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   @import '../*'
   section#powitanie
     .items:first-child
@@ -24,4 +27,5 @@ export default {
         .zdjecie
           width (col * 8)
           max-height 20vh
+          background no-repeat center center / contain
 </style>
